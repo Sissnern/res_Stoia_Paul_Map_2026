@@ -58,6 +58,22 @@ public class Main {
             );
 
 
+            // 3 sorting
+            System.out.println("\nExercise 3 - Sorted Astronauts:");
+
+            List<Astronaut> sorted = service.getSortedAstronauts();
+
+            sorted.forEach(a ->
+                    System.out.println("[#" + a.getId() + "] "
+                            + a.getName() + " | "
+                            + a.getSpacecraft() + " | "
+                            + a.getStatus() + " | exp="
+                            + a.getExperiencelevel())
+            );
+
+
+
+
 
 
 

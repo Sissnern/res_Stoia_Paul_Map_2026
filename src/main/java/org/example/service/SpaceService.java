@@ -41,6 +41,21 @@ public class SpaceService {
                 .filter(a -> a.getStatus() == AstronautStatus.ACTIVE)
                 .collect(Collectors.toList());
     }
+    // Exercise 3
+    public List<Astronaut> getSortedAstronauts() throws Exception {
+
+        return astronautRepository.findAll().stream()
+                .sorted(
+                        Comparator.comparing(Astronaut::getExperiencelevel)
+                                .reversed()
+                                .thenComparing(Astronaut::getName)
+                )
+                .collect(Collectors.toList());
+    }
+
+
+
+
 
 
 
