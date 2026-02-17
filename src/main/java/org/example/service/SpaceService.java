@@ -54,6 +54,20 @@ public class SpaceService {
     }
 
 
+    // Exercise 5
+    public int calculateComputedPoints(MissionEvent event) {
+
+        return switch (event.getType()) {
+            case EVA -> event.getBasePoints() + 2 * event.getDay();
+            case SYSTEM_FAILURE -> event.getBasePoints() - 3 - event.getDay();
+            case SCIENCE -> event.getBasePoints() + (event.getDay() % 4);
+            case MEDICAL -> event.getBasePoints() - 2 * (event.getDay() % 3);
+            case COMMUNICATION -> event.getBasePoints() + 5;
+        };
+    }
+
+
+
 
 
 

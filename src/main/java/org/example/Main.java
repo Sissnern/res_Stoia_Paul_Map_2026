@@ -8,10 +8,7 @@ import org.example.service.SpaceService;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -71,6 +68,32 @@ public class Main {
                             + a.getExperiencelevel())
             );
 
+            // 4 write to file (reversed order)
+            Collections.reverse(sorted);
+
+            try (PrintWriter pw = new PrintWriter(new FileWriter("astronauts_sorted.txt"))) {
+                sorted.forEach(a ->
+                        pw.println("[#" + a.getId() + "] "
+                                + a.getName() + " | "
+                                + a.getSpacecraft() + " | "
+                                + a.getStatus() + " | exp="
+                                + a.getExperiencelevel())
+                );
+            }
+
+//            // 5 risk score calculation
+//            System.out.println("\nExercise 5 - Computed Points :");
+//
+//            List<MissionEvent> event = service.getMissionEvents();
+//
+//            for (int i = 0; i < 5 && i < event.size(); i++) {
+//                MissionEvent event1 = events.get(i);
+//                int computedPoints = service.m(event);
+//
+//                System.out.println("Event " + event.getId()
+//                        + " -> severity=" + event.getSeverity()
+//                        + " -> riskScore=" + riskScore);
+//            }
 
 
 
