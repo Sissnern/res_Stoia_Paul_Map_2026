@@ -33,13 +33,15 @@ public class SpaceService {
         return supplyRepository.findAll();
     }
 
-//    // Exercise 2
-//    public List<Astronaut> getVehicleByTypeAndStatus(AstronautS) throws Exception {
-//        return vehicleRepository.findAll().stream()
-//                .filter(v -> v.getType() == type)
-//                .filter(v -> v.getStatus() == status)
-//                .collect(Collectors.toList());
-//    }
+    // Exercise 2
+    public List<Astronaut> getActiveAstronautsBySpacecraft(String spacecraft) throws Exception {
+
+        return astronautRepository.findAll().stream()
+                .filter(a -> a.getSpacecraft().equals(spacecraft))
+                .filter(a -> a.getStatus() == AstronautStatus.ACTIVE)
+                .collect(Collectors.toList());
+    }
+
 
 
 

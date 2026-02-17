@@ -40,31 +40,23 @@ public class Main {
             );
 
 
-//            // 2 filtering
-//            Scanner scanner = new Scanner(System.in);
-//
-//            System.out.print("\nSarcina 2 - Introduceti tipul navetei (Orion,Dragon,Starliner): ");
-//            String typeStr = scanner.nextLine().toUpperCase().trim();
-//
-//            System.out.print("Sarcina 2 - Introduceti statusul astronautului  (ACTIVE, INACTIVE,LOST): ");
-//            String statusStr = scanner.nextLine().toUpperCase().trim();
-//
-//            // Convert Strings to Enums
-//            VehicleStatus status = VehicleStatus.valueOf(statusStr);
-//            AstronautStatus type = AstronautStatus.valueOf(typeStr);
-//
-//
-//            // Call the Service
-//            List<Astronaut> filteredAstronauts = service.getAstronauts(type, status);
-//
-//            System.out.println("\nVehicule gasite:");
-//            if (filteredAstronauts.isEmpty()) {
-//                System.out.println("Nu s-au gasit vehicule care sa respecte ambele conditii.");
-//            } else {
-//                for (Astronaut v : filteredAstronauts) {
-//                    System.out.println(v);
-//                }
-//            }
+            // 2 filtering
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("\nInput Spacecraft: ");
+            String spacecraft = scanner.nextLine().trim();
+
+            List<Astronaut> filtered =
+                    service.getActiveAstronautsBySpacecraft(spacecraft);
+
+            filtered.forEach(a ->
+                    System.out.println("[#" + a.getId() + "] "
+                            + a.getName() + " | "
+                            + a.getSpacecraft() + " | "
+                            + a.getStatus() + " | exp="
+                            + a.getExperiencelevel())
+            );
+
 
 
 
