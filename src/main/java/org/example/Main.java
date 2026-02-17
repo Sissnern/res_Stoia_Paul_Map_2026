@@ -81,7 +81,7 @@ public class Main {
                 );
             }
 
-//            // 5 risk score calculation
+//            // 5 Computed points calculation
 //            System.out.println("\nExercise 5 - Computed Points :");
 //
 //            List<MissionEvent> event = service.getMissionEvents();
@@ -91,8 +91,32 @@ public class Main {
 //                int computedPoints = service.m(event);
 //
 //                System.out.println("Event " + event.getId()
-//                        + " -> severity=" + event.getSeverity()
+//                        + " -> severity=" + event.get()
 //                        + " -> riskScore=" + riskScore);
+//            }
+
+//            // 6 ranking Astronauts
+//            System.out.println("\nExercise 6 - Vehicle Ranking:");
+//
+//            Map<String, Integer> totalRiskMap = service.calculateTotalRiskPerVehicle();
+//
+//            List<Map.Entry<String, Integer>> sortedVehicles =
+//                    totalRiskMap.entrySet().stream()
+//                            .sorted(
+//                                    Comparator.comparing(Map.Entry<String, Integer>::getValue)
+//                                            .thenComparing(Map.Entry<String, Integer>::getKey, Comparator.reverseOrder())
+//                            )
+//                            .toList();
+//
+//            System.out.println("Top 5 Vehicles:");
+//            for (int i = 0; i < 5 && i < sortedVehicles.size(); i++) {
+//                Map.Entry<String, Integer> entry = sortedVehicles.get(i);
+//                System.out.println((i + 1) + ". " + entry.getKey() + " -> " + entry.getValue());
+//            }
+//
+//            if (!sortedVehicles.isEmpty()) {
+//                Map.Entry<String, Integer> safest = sortedVehicles.get(0);
+//                System.out.println("\nSafest vehicle: " + safest.getKey() + " -> " + safest.getValue());
 //            }
 
 

@@ -67,6 +67,41 @@ public class SpaceService {
     }
 
 
+//    // Exercise 6
+//    public Map<String, Integer> calculateTotalRiskPerVehicle() throws Exception {
+//
+//        List<Vehicle> vehicles = vehicleRepository.findAll();
+//        List<TrafficEvent> events = trafficEventRepository.findAll();
+//        List<Fine> fines = fineRepository.findAll();
+//
+//        Map<Integer, Integer> riskPerVehicle = new HashMap<>();
+//        Map<Integer, Integer> finePerVehicle = new HashMap<>();
+//
+//        // Sum risk scores
+//        for (TrafficEvent event : events) {
+//            int riskScore = calculateRiskScore(event);
+//            riskPerVehicle.merge(event.getVehicleId(), riskScore, Integer::sum);
+//        }
+//
+//        // Sum fines
+//        for (Fine fine : fines) {
+//            finePerVehicle.merge(fine.getVehicleid(), fine.getAmount(), Integer::sum);
+//        }
+//
+//        Map<String, Integer> totalRiskMap = new HashMap<>();
+//
+//        for (Vehicle vehicle : vehicles) {
+//            int totalRisk = riskPerVehicle.getOrDefault(vehicle.getId(), 0)
+//                    - finePerVehicle.getOrDefault(vehicle.getId(), 0);
+//
+//            totalRiskMap.put(vehicle.getLicensePlate(), totalRisk);
+//        }
+//
+//        return totalRiskMap;
+//    }
+
+
+
 
 
 
